@@ -1,0 +1,344 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 760px;
+  padding: 38px var(--page-x) 52px;
+  border-bottom: 1px solid var(--color-rule);
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 38px;
+  left: var(--page-x);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.15s forwards;
+}
+
+.logoDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.stage {
+  position: absolute;
+  inset: 0 var(--page-x);
+  pointer-events: none;
+}
+
+.gameplayTitle {
+  position: absolute;
+  left: 0;
+  top: 21%;
+  font-size: clamp(90px, 9.2vw, 175px);
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(45px);
+  animation: heroReveal 0.95s var(--ease-out) 0.2s forwards;
+}
+
+.programmerTitle {
+  position: absolute;
+  left: 40%;
+  top: 39%;
+  color: var(--color-ink-2);
+  font-size: clamp(72px, 7.4vw, 140px);
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: heroReveal 0.95s var(--ease-out) 0.38s forwards;
+}
+
+.intro {
+  position: absolute;
+  left: 0;
+  top: 38%;
+  width: 280px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 0.8s ease 0.7s forwards;
+}
+
+.intro p {
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.intro strong {
+  color: var(--color-ink-2);
+  font-weight: 500;
+}
+
+.tech {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 28px;
+  color: var(--color-ink-2);
+  font-size: 9px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.techLine {
+  width: 20px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.location {
+  position: absolute;
+  right: 5.5vw;
+  top: 57%;
+  text-align: right;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.9;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.9s forwards;
+}
+
+.locationStatus {
+  color: var(--color-ink-2);
+}
+
+.statusDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-left: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.actions {
+  position: absolute;
+  left: var(--page-x);
+  bottom: 74px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1s forwards;
+  pointer-events: auto;
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 20px;
+  overflow: hidden;
+  border: 1px solid var(--color-dim);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-ink);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-ink);
+  transform: translateY(101%);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.button span {
+  position: relative;
+  z-index: 2;
+}
+
+.button:hover {
+  color: var(--color-paper);
+  border-color: var(--color-ink);
+}
+
+.button:hover::before {
+  transform: translateY(0);
+}
+
+.resume {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--color-ink-2);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.resume:hover {
+  color: var(--color-ink);
+  transform: translateX(4px);
+}
+
+.scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 35px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  color: var(--color-muted);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.15s forwards;
+  pointer-events: auto;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 30px;
+  overflow: hidden;
+  background: var(--color-rule);
+}
+
+.scrollLine::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 12px;
+  background: var(--color-ink-2);
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(18px);
+  }
+  100% {
+    transform: translateY(35px);
+  }
+}
+
+@media (max-width: 1150px) {
+  .programmerTitle {
+    left: auto;
+    right: 0;
+    font-size: 7.5vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 70px;
+  }
+
+  .stage {
+    position: relative;
+    inset: auto;
+    margin-top: 150px;
+  }
+
+  .gameplayTitle,
+  .programmerTitle,
+  .intro,
+  .location {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+  }
+
+  .gameplayTitle {
+    font-size: 16vw;
+  }
+
+  .programmerTitle {
+    margin-top: 15px;
+    font-size: 12vw;
+  }
+
+  .intro {
+    margin-top: 55px;
+  }
+
+  .location {
+    margin-top: 45px;
+    text-align: left;
+  }
+
+  .actions {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-top: 80px;
+  }
+
+  .scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .stage {
+    margin-top: 120px;
+  }
+
+  .gameplayTitle {
+    font-size: 18vw;
+  }
+
+  .programmerTitle {
+    font-size: 11.7vw;
+  }
+
+  .intro {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+}

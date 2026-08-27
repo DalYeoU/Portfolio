@@ -1,0 +1,88 @@
+/* portfolio · theme: ported from preview.html (near-black + steel-blue accent)
+ * macrostructure: absolute-positioned split hero + single-item work slider + long-form project detail
+ * fonts: Space Grotesk (display) · Pretendard Variable (body, KR+EN) · Jetendard (mono/labels/code, KR+EN)
+ */
+@import "tailwindcss";
+
+:root {
+  --color-paper: #070708;
+  --color-paper-2: #101012;
+  --color-rule: #202024;
+  --color-ink: #f1f1f1;
+  --color-ink-2: #9a9a9f;
+  --color-muted: #6f6f75;
+  --color-dim: #3b3b40;
+  --color-accent: #4fa3ff;
+  --color-accent-2: #8fc7ff;
+  --color-focus: #8fc7ff;
+
+  --font-display: var(--font-space-grotesk), "Pretendard Variable", sans-serif;
+  --font-body: "Pretendard Variable", var(--font-space-grotesk), sans-serif;
+  --font-mono: var(--font-jetendard), monospace;
+
+  --text-sm: 0.875rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-display-s: clamp(1.75rem, 2vw + 1.25rem, 2.25rem);
+  --text-display: clamp(2.25rem, 4vw + 1rem, 3.25rem);
+
+  --measure: 62ch;
+  --container-max: 1400px;
+  --page-x: clamp(20px, 4vw, 82px);
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-short: 180ms;
+  --dur-reveal: 420ms;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-2: var(--color-paper-2);
+  --color-rule: var(--color-rule);
+  --color-ink: var(--color-ink);
+  --color-ink-2: var(--color-ink-2);
+  --color-muted: var(--color-muted);
+  --color-dim: var(--color-dim);
+  --color-accent: var(--color-accent);
+  --color-accent-2: var(--color-accent-2);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+  --text-sm: var(--text-sm);
+  --text-md: var(--text-md);
+  --text-lg: var(--text-lg);
+  --text-display-s: var(--text-display-s);
+  --text-display: var(--text-display);
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

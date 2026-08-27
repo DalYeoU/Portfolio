@@ -1,0 +1,114 @@
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 var(--page-x) 80px;
+}
+
+.panel {
+  min-height: 300px;
+  padding: 58px 40px;
+  border-right: 1px solid var(--color-rule);
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.panel:first-child {
+  padding-left: 0;
+}
+
+.panel:last-child {
+  border-right: 0;
+}
+
+.panelVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay1 {
+  transition-delay: 0.1s;
+}
+
+.delay2 {
+  transition-delay: 0.2s;
+}
+
+.panel h2 {
+  margin-bottom: 27px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.aboutLarge {
+  max-width: 420px;
+  color: var(--color-muted);
+  font-size: clamp(22px, 2vw, 32px);
+  line-height: 1.38;
+  letter-spacing: -0.025em;
+}
+
+.aboutLarge strong {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.skillGroup {
+  margin-bottom: 25px;
+}
+
+.skillLabel {
+  margin-bottom: 11px;
+  color: var(--color-dim);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 20px;
+  color: var(--color-ink-2);
+  font-size: 12px;
+}
+
+.contactCopy {
+  margin-bottom: 26px;
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--color-ink-2);
+  font-size: 12px;
+}
+
+.contactList a {
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.contactList a:hover {
+  color: var(--color-ink);
+  transform: translateX(4px);
+}
+
+@media (max-width: 850px) {
+  .info {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    min-height: auto;
+    padding: 50px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-rule);
+  }
+}
