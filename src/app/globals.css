@@ -16,6 +16,11 @@
   --color-accent-2: #8fc7ff;
   --color-focus: #8fc7ff;
 
+  /* code block only: diff state + syntax accents (not the page's brand accent) */
+  --color-diff-add: #4ade80;
+  --color-diff-del: #f87171;
+  --color-syntax-string: #f0b46a;
+
   --font-display: var(--font-space-grotesk), "Pretendard Variable", sans-serif;
   --font-body: "Pretendard Variable", var(--font-space-grotesk), sans-serif;
   --font-mono: var(--font-jetendard), monospace;
@@ -45,6 +50,9 @@
   --color-dim: var(--color-dim);
   --color-accent: var(--color-accent);
   --color-accent-2: var(--color-accent-2);
+  --color-diff-add: var(--color-diff-add);
+  --color-diff-del: var(--color-diff-del);
+  --color-syntax-string: var(--color-syntax-string);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --font-mono: var(--font-mono);
@@ -74,6 +82,21 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
+}
+
+@keyframes contentEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-content-enter {
+  animation: contentEnter 0.4s var(--ease-out);
 }
 
 @media (prefers-reduced-motion: reduce) {

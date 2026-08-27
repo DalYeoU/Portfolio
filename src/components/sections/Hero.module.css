@@ -23,13 +23,6 @@
   animation: fadeIn 0.8s ease 0.15s forwards;
 }
 
-.logoDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-accent);
-}
-
 .stage {
   position: absolute;
   inset: 0 var(--page-x);
@@ -97,37 +90,18 @@
   text-transform: uppercase;
 }
 
-.techLine {
-  width: 20px;
-  height: 1px;
-  background: var(--color-accent);
-}
-
 .location {
   position: absolute;
   right: 5.5vw;
   top: 57%;
   text-align: right;
-  color: var(--color-muted);
+  color: var(--color-ink-2);
   font-size: 13px;
   line-height: 1.9;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   opacity: 0;
   animation: fadeIn 0.8s ease 0.9s forwards;
-}
-
-.locationStatus {
-  color: var(--color-ink-2);
-}
-
-.statusDot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin-left: 7px;
-  border-radius: 50%;
-  background: var(--color-accent);
 }
 
 .actions {
@@ -147,11 +121,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 42px;
-  padding: 0 20px;
+  height: 54px;
+  padding: 0 30px;
   overflow: hidden;
   border: 1px solid var(--color-dim);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -217,20 +191,8 @@
   pointer-events: auto;
 }
 
-.scrollLine {
-  width: 1px;
-  height: 30px;
-  overflow: hidden;
-  background: var(--color-rule);
-}
-
-.scrollLine::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 12px;
-  background: var(--color-ink-2);
-  animation: scrollLine 1.8s ease-in-out infinite;
+.scroll svg {
+  animation: scrollBounce 1.8s ease-in-out infinite;
 }
 
 @keyframes heroReveal {
@@ -246,15 +208,12 @@
   }
 }
 
-@keyframes scrollLine {
-  0% {
-    transform: translateY(-15px);
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(18px);
-  }
-  100% {
-    transform: translateY(35px);
+    transform: translateY(6px);
   }
 }
 

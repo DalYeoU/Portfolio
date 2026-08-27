@@ -10,9 +10,11 @@ export default function Home() {
     <>
       <main className="flex-1">
         <Hero />
-        <SelectedWork />
-        <MainProject />
-        <SideProjects />
+        <div id="work">
+          <SelectedWork />
+          <MainProject />
+          <SideProjects />
+        </div>
         <Info />
       </main>
       <div id="page-end" aria-hidden="true" />

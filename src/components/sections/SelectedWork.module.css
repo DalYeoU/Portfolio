@@ -18,7 +18,7 @@
 
 .count {
   color: var(--color-muted);
-  font-size: 9px;
+  font-size: 13px;
   letter-spacing: 0.16em;
   font-variant-numeric: tabular-nums;
 }
@@ -70,7 +70,7 @@
   display: inline-flex;
   gap: 9px;
   margin-top: 30px;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -112,6 +112,9 @@
 }
 
 .controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 36px;
   height: 36px;
   border: 1px solid var(--color-dim);
@@ -120,7 +123,6 @@
   backdrop-filter: blur(4px);
   color: var(--color-ink-2);
   cursor: pointer;
-  font-size: 13px;
   transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
 }
 
@@ -145,7 +147,7 @@
 }
 
 .allProjects a {
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;

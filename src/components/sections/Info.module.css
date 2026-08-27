@@ -36,7 +36,7 @@
 
 .panel h2 {
   margin-bottom: 27px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -62,7 +62,7 @@
 .skillLabel {
   margin-bottom: 11px;
   color: var(--color-dim);
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -70,15 +70,31 @@
 .skillList {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px 20px;
+  gap: 10px;
+}
+
+.skillChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
   color: var(--color-ink-2);
+  font-family: var(--font-mono);
   font-size: 12px;
+  letter-spacing: 0.02em;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.skillChip:hover {
+  border-color: var(--color-accent);
+  color: var(--color-ink);
 }
 
 .contactCopy {
   margin-bottom: 26px;
   color: var(--color-muted);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.75;
 }
 
@@ -87,12 +103,11 @@
   flex-direction: column;
   gap: 14px;
   color: var(--color-ink-2);
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .contactList a {
   transition: color 0.2s ease, transform 0.2s ease;
-  display: inline-block;
 }
 
 .contactList a:hover {

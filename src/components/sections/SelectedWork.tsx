@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowUp, ArrowDown, ArrowUpRight } from "lucide-react";
 import styles from "./SelectedWork.module.css";
 
 const WORKS = [
@@ -38,7 +39,7 @@ export function SelectedWork() {
   const count = WORKS.length;
 
   return (
-    <section id="work" className={styles.work}>
+    <section className={styles.work}>
       <div className={styles.header}>
         <h2>Selected Work</h2>
         <span className={styles.count} aria-live="polite">
@@ -59,7 +60,8 @@ export function SelectedWork() {
             </div>
             <p className={styles.description}>{work.summary}</p>
             <a className={styles.link} href={work.href}>
-              프로젝트 보기 <span aria-hidden="true">↗</span>
+              프로젝트 보기
+              <ArrowUpRight size={14} strokeWidth={2} aria-hidden="true" />
             </a>
           </div>
 
@@ -79,21 +81,24 @@ export function SelectedWork() {
             onClick={() => setIndex((i) => (i - 1 + count) % count)}
             aria-label="이전 프로젝트"
           >
-            ↑
+            <ArrowUp size={16} strokeWidth={2} aria-hidden="true" />
           </button>
           <button
             type="button"
             onClick={() => setIndex((i) => (i + 1) % count)}
             aria-label="다음 프로젝트"
           >
-            ↓
+            <ArrowDown size={16} strokeWidth={2} aria-hidden="true" />
           </button>
         </div>
       </div>
 
       <div className={styles.allProjects}>
         <span aria-hidden="true" />
-        <a href="#project">프로젝트 전체 보기 ↗</a>
+        <a href="#project" className="inline-flex items-center gap-1.5">
+          프로젝트 전체 보기
+          <ArrowUpRight size={13} strokeWidth={2} aria-hidden="true" />
+        </a>
         <span aria-hidden="true" />
       </div>
     </section>
