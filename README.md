@@ -4,20 +4,22 @@
 
 이 저장소는 제 포트폴리오 웹사이트(Next.js)의 소스코드입니다.
 
-**Live:** (배포 후 링크 추가 예정)
+**Live:** [portfolio.foxtail.kr](https://portfolio.foxtail.kr)
 
 ## 무엇을 할 수 있나요
 
-- **게임플레이 시스템**: 전투 로직, 데미지 계산, 상태 머신 설계
-- **AI**: 비헤이비어 트리 기반 적 행동 패턴 설계
-- **자료구조 / 알고리즘**: A\* 길찾기용 우선순위 큐 직접 구현 등
+- **게임플레이 시스템**: 폭탄 생성·물리(설치/차기/연쇄 폭발), 캐릭터 상태 머신(기절/사망/부활) 설계 및 구현
+- **전투 밸런스**: 방어력 감쇠·명중률 공식 설계, 대쉬 게이지·회피 판정 구현
+- **플레이어 조작**: PlayerController + Pawn 기반 이동/입력 처리, Possess 전환을 활용한 시점 전환(탱크 ↔ 드론)
 
 ## 프로젝트
 
 | 프로젝트 | 설명 | 링크 |
 | --- | --- | --- |
-| [팀 프로젝트명] | [한 줄 요약] | (준비 중) |
-| [개인 프로젝트명] | [한 줄 요약, 진행 중] | (준비 중) |
+| SpartaArcade | 봄버맨 스타일 멀티플레이어 서바이벌. 폭탄 생성·물리와 캐릭터 조작/애니메이션 담당 | [repo](https://github.com/NBcampUnrealTrack/8th-Team1-CH4-Project) |
+| One, Two… Shoot! | 탱크 대전 게임. 탱크 ↔ 드론 시점 전환 구현 | [repo](https://github.com/NBcampUnrealTrack/8th-Team12-CH3-Project) |
+| Text Console RPG | 텍스트 기반 콘솔 RPG. 전투 밸런스(명중률/방어력 공식) 설계 | [repo](https://github.com/GoldBoll/NBC_Console_TeamProject) |
+| Spark | '움직여야 보이는' 3D 퍼즐 플랫포머. 기획부터 구현까지 혼자 진행 중 | (비공개 저장소) |
 
 ## 연락처
 
