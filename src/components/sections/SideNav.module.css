@@ -24,6 +24,7 @@
 .link {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 15px;
   color: var(--color-muted);
   font-size: 9px;
@@ -55,11 +56,12 @@
 
 .label {
   display: inline-block;
-  max-width: 90px;
+  width: 40px;
+  text-align: right;
   opacity: 1;
   overflow: hidden;
   white-space: nowrap;
-  transition: max-width 0.35s var(--ease-out), opacity 0.25s ease;
+  transition: width 0.35s var(--ease-out), opacity 0.25s ease;
 }
 
 /* Collapsed dot state: dashes shrink to dots, labels hide */
@@ -76,7 +78,7 @@
 }
 
 .navScrolled .label {
-  max-width: 0;
+  width: 0;
   opacity: 0;
 }
 
@@ -95,7 +97,7 @@
 
 .navScrolled:hover .label,
 .navScrolled:focus-within .label {
-  max-width: 90px;
+  width: 40px;
   opacity: 1;
 }
 

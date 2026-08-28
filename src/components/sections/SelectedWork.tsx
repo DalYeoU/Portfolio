@@ -2,34 +2,30 @@
 
 import { useState } from "react";
 import { ArrowUp, ArrowDown, ArrowUpRight } from "lucide-react";
+import { useReveal } from "@/hooks/useReveal";
 import styles from "./SelectedWork.module.css";
 
 const WORKS = [
   {
-    title: "[팀 프로젝트명]",
+    title: "SpartaArcade",
     category: "팀 프로젝트",
     stack: "언리얼엔진 5 · C++",
     summary:
-      "[장르] 게임. 전투 시스템과 AI 비헤이비어 트리를 클라이언트에서 직접 설계하고 구현했습니다.",
+      "봄버맨 스타일 멀티플레이어 서바이벌 게임. 캐릭터 조작·애니메이션과 폭탄 생성·물리(설치, 차기, 연쇄 폭발)를 설계하고 구현했습니다.",
     href: "#project",
     seed: "unreal-combat-corridor",
+    image: "/images/spartaarcade-cover.png" as string | undefined,
+    imageIsAI: true,
   },
   {
-    title: "[개인 프로젝트명]",
+    title: "Spark",
     category: "개인 프로젝트",
     stack: "진행 중",
-    summary: "기획부터 구현까지 혼자 진행 중인 [장르] 게임입니다.",
+    summary: "움직여야 스파크가 튀어 어둠 속 공간이 잠시 보이는 3D 퍼즐 플랫포머. 기획부터 구현까지 혼자 진행 중입니다.",
     href: "#side",
     seed: "unreal-solo-prototype",
-  },
-  {
-    title: "우선순위 큐 A* 길찾기",
-    category: "자료구조 · 알고리즘",
-    stack: "C++",
-    summary:
-      "STL priority_queue의 decrease-key 한계를 해결하기 위해 인덱스 추적형 바이너리 힙을 직접 구현했습니다.",
-    href: "#side",
-    seed: "pathfinding-grid",
+    image: "/images/spark-concept.png",
+    imageIsAI: true,
   },
 ];
 
@@ -37,9 +33,10 @@ export function SelectedWork() {
   const [index, setIndex] = useState(0);
   const work = WORKS[index];
   const count = WORKS.length;
+  const reveal = useReveal<HTMLElement>();
 
   return (
-    <section className={styles.work}>
+    <section ref={reveal.ref} className={`${styles.work} reveal ${reveal.visible ? "reveal-visible" : ""}`}>
       <div className={styles.header}>
         <h2>Selected Work</h2>
         <span className={styles.count} aria-live="polite">
@@ -67,11 +64,12 @@ export function SelectedWork() {
 
           <div className={styles.visual}>
             <img
-              src={`https://picsum.photos/seed/${work.seed}/960/540`}
+              src={work.image ?? `https://picsum.photos/seed/${work.seed}/960/540`}
               alt=""
               className={styles.visualImg}
               loading="lazy"
             />
+            {work.imageIsAI && <span className={styles.aiBadge}>AI 생성 이미지</span>}
           </div>
         </article>
 

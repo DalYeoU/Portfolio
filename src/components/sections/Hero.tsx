@@ -1,27 +1,60 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { SideNav } from "@/components/sections/SideNav";
 import styles from "./Hero.module.css";
 
 export function Hero() {
+  const gameplayRef = useRef<HTMLDivElement>(null);
+  const programmerRef = useRef<HTMLDivElement>(null);
+  const introRef = useRef<HTMLDivElement>(null);
+  const locationRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let frame = 0;
+    const handleMouseMove = (e: MouseEvent) => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const mx = e.clientX / window.innerWidth - 0.5;
+        const my = e.clientY / window.innerHeight - 0.5;
+        gameplayRef.current?.style.setProperty("transform", `translate(${mx * 14}px, ${my * 10}px)`);
+        programmerRef.current?.style.setProperty("transform", `translate(${mx * 28}px, ${my * 20}px)`);
+        introRef.current?.style.setProperty("transform", `translate(${mx * 4}px, ${my * 3}px)`);
+        locationRef.current?.style.setProperty("transform", `translate(${mx * 4}px, ${my * 3}px)`);
+      });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <section id="home" className={styles.hero}>
       <div className={styles.logo}>전종환</div>
 
       <div className={styles.stage}>
-        <h1 className={styles.gameplayTitle}>GAMEPLAY</h1>
-        <div className={styles.programmerTitle} aria-hidden="true">
-          PROGRAMMER
+        <div ref={gameplayRef} className={styles.gameplayWrap}>
+          <h1 className={styles.gameplayTitle}>GAME CLIENT</h1>
+        </div>
+        <div ref={programmerRef} className={styles.programmerWrap} aria-hidden="true">
+          <div className={styles.programmerTitle}>PROGRAMMER</div>
         </div>
 
-        <div className={styles.intro}>
-          <p>
-            게임플레이 시스템과 <strong>AI 로직을 설계하고 구현</strong>하며
-            플레이어가 체감하는 규칙을 코드로 옮깁니다.
-          </p>
-          <div className={styles.tech}>Unreal Engine 5 · C++</div>
+        <div ref={introRef} className={styles.introWrap}>
+          <div className={styles.intro}>
+            <p>
+              좋아하는 게임을 플레이하는 사람에서,
+              <br />
+              좋아하는 <strong>경험을 만드는 사람</strong>으로.
+            </p>
+            <div className={styles.tech}>Unreal Engine 5 · C++</div>
+          </div>
         </div>
 
-        <div className={styles.location}>채용 제안 환영</div>
+        <div ref={locationRef} className={styles.location}>새로운 기회에 열려 있습니다.</div>
       </div>
 
       <SideNav />
