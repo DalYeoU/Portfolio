@@ -19,7 +19,7 @@
 | SpartaArcade | 봄버맨 스타일 멀티플레이어 서바이벌. 폭탄 생성·물리와 캐릭터 조작/애니메이션 담당 | [repo](https://github.com/NBcampUnrealTrack/8th-Team1-CH4-Project) |
 | One, Two… Shoot! | 탱크 대전 게임. 탱크 ↔ 드론 시점 전환 구현 | [repo](https://github.com/NBcampUnrealTrack/8th-Team12-CH3-Project) |
 | Text Console RPG | 텍스트 기반 콘솔 RPG. 전투 밸런스(명중률/방어력 공식) 설계 | [repo](https://github.com/GoldBoll/NBC_Console_TeamProject) |
-| Spark | '움직여야 보이는' 3D 퍼즐 플랫포머. 기획부터 구현까지 혼자 진행 중 | (비공개 저장소) |
+| Spark | '움직여야 보이는' 3D 퍼즐 플랫포머. 기획부터 구현까지 혼자 진행 중 | [repo](https://github.com/DalYeoU/Spark) |
 
 ## 연락처
 

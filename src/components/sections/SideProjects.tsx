@@ -1,12 +1,15 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 
 const PROJECT = {
   status: "in-progress",
   title: "Spark",
   slogan: "'Move to See. Remember to Survive.'",
   summary: "움직여야 스파크가 튀어 어둠 속 공간이 잠시 보이는 3D 퍼즐 플랫포머입니다. 기획부터 구현까지 혼자 진행 중입니다.",
+  repo: "https://github.com/DalYeoU/Spark",
 };
 
 export function SideProjects() {
@@ -32,6 +35,16 @@ export function SideProjects() {
             <br />
             {PROJECT.summary}
           </p>
+          <a
+            href={PROJECT.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs text-ink-2 transition-colors hover:text-ink"
+          >
+            <GithubIcon size={13} />
+            레포지토리
+            <ArrowUpRight size={12} strokeWidth={2} aria-hidden="true" />
+          </a>
         </article>
       </div>
     </section>
